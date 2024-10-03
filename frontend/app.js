@@ -7,8 +7,8 @@ const ApartmentList = ({ apartments }) => {
 
   // Filtrer par prix et mot-clé dans la description
   const filteredApartments = apartments.filter(apartment => {
-    const matchesPrice = (!minPrice || apartment.price >= minPrice) && (!maxPrice || apartment.price <= maxPrice);
-    const matchesDescription = apartment.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesPrice = (!minPrice || apartments.price >= minPrice) && (!maxPrice || apartments.price <= maxPrice);
+    const matchesDescription = apartments.description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesPrice && matchesDescription;
   });
 
@@ -37,11 +37,11 @@ const ApartmentList = ({ apartments }) => {
 
       <div className="apartment-list">
         {filteredApartments.map(apartment => (
-          <div key={apartment.id} className="apartment-item">
-            <img src={apartment.picture} alt="apartment" />
-            <h3>{apartment.description}</h3>
-            <p>Prix: {apartment.price} Ariary</p>
-            <button onClick={() => handleDetailClick(apartment.id)}>Voir Détails</button>
+          <div key={apartments.id} className="apartment-item">
+            <img src={apartments.picture} alt="apartment" />
+            <h3>{apartments.description}</h3>
+            <p>Prix: {apartments.price} Ariary</p>
+            <button onClick={() => handleDetailClick(apartments.id)}>Voir Détails</button>
           </div>
         ))}
       </div>

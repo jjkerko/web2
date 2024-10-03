@@ -11,12 +11,11 @@ const ApartmentDetail = ({ apartments }) => {
 
   return (
     <div>
-      <img src={apartment.picture} alt="apartment" />
-      <h2>{apartment.description}</h2>
-      <p>Prix: {apartment.price} Ariary</p>
+      <img src={apartments.picture} alt="apartment" />
+      <h2>{apartments.description}</h2>
+      <p>Prix: {apartments.price} Ariary</p>
     </div>
   );
 };
 
 export default ApartmentDetail;
-/**Comment puis je relier tout les codes js que tu m'as envoyer et les afficher sur mon navigateur sachant très bien que je suis sur Api rest niveau back */
